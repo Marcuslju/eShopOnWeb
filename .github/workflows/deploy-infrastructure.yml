@@ -1,0 +1,17 @@
+name: Deploy Azure Infrastructure with Bicep
+
+on:
+  push:
+    branches:
+      - main  # Triggers the workflow on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Azure CLI
+      uses: azure/setup-azure-cli@v1
